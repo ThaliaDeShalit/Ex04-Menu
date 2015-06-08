@@ -4,7 +4,9 @@ using System.Text;
 
 namespace Ex04.Menus.Delegates
 {
-    class MenuItem
+    //public delegate void Action<MenuItem>
+
+    public class MenuItem
     {
         public event Action<MenuItem> clicked;
 

@@ -9,16 +9,18 @@ namespace Ex04.Menus.Test
     {
         public static void Main()
         {
-            MenuItem file = new MenuItem("File");
-            NewProjectFunction newProject = new NewProjectFunction("New Project");
-            MenuItem add = new MenuItem("Add");
-            add.SubItems.Add(newProject);
+            DelegateTester dt = new DelegateTester();
+            dt.run();
+            //MenuItem file = new MenuItem("File");
+            //NewProjectFunction newProject = new NewProjectFunction("New Project");
+            //MenuItem add = new MenuItem("Add");
+            //add.SubItems.Add(newProject);
 
-            file.SubItems.Add(newProject);
-            file.SubItems.Add(add);
+            //file.SubItems.Add(newProject);
+            //file.SubItems.Add(add);
 
-            MainMenu main = new MainMenu(file);
-            main.Show();
+            //MainMenu main = new MainMenu(file);
+            //main.Show();
         }       
 
         class NewProjectFunction : MenuItem, IClickable

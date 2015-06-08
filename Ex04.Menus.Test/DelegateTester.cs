@@ -11,7 +11,7 @@ namespace Ex04.Menus.Test
         {
             MenuItem file = new MenuItem("File");
             MenuItem newProject = new MenuItem("New Project");
-            newProject.clicked += new Action<MenuItem>(newProject_Selected);
+            newProject.Selected += new Action<MenuItem>(newProject_Selected);
             file.SubItems.Add(newProject);
 
 

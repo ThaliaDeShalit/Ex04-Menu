@@ -4,11 +4,10 @@ using System.Text;
 
 namespace Ex04.Menus.Delegates
 {
-    //public delegate void Action<MenuItem>
 
     public class MenuItem
     {
-        public event Action<MenuItem> clicked;
+        public event Action<MenuItem> Selected;
 
         private List<MenuItem> m_SubItems;
         private string m_Header;
@@ -47,11 +46,11 @@ namespace Ex04.Menus.Delegates
             return isSubMenu;
         }
 
-        public void onClicked()
+        public void onSelected()
         {
-            if (clicked != null)
+            if (Selected != null)
             {
-                clicked(this);
+                Selected(this);
             }
         }
     }

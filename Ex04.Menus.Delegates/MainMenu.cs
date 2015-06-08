@@ -69,7 +69,7 @@ namespace Ex04.Menus.Delegates
                     }
                     else
                     {
-                        subItem.onClicked();
+                        subItem.onSelected();
                     }
                 }
             }

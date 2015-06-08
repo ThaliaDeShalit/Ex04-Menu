@@ -132,4 +132,3 @@ namespace Ex04.Menus.Delegates
         }
     }
 }
-

@@ -37,7 +37,6 @@ namespace Ex04.Menus.Interfaces
         // if's are called
         private void showMenu(MenuItem i_Menu, string i_BackOrExitOption)
         {
-
             StringBuilder stringBuilder = new StringBuilder();
             int inputFromUser;
             int index;

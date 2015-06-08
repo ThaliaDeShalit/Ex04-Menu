@@ -36,21 +36,27 @@ namespace Ex04.Menus.Test
 
         private static int countWords(string i_Phrase)
         {
-            String text = i_Phrase.Trim();
             int wordCount = 0;
             int index = 0;
 
-            while (index < text.Length)
+            // Trims the spaces at the begining and end of the string
+            i_Phrase = i_Phrase.Trim();
+
+            while (index < i_Phrase.Length)
             {
                 // Check if current char is part of a word
-                while (index < text.Length && Char.IsWhiteSpace(text[index]) == false)
+                while (index < i_Phrase.Length && char.IsWhiteSpace(i_Phrase[index]) == false)
+                {
                     index++;
+                }
 
                 wordCount++;
 
                 // Skip whitespace until next word
-                while (index < text.Length && Char.IsWhiteSpace(text[index]) == true)
+                while (index < i_Phrase.Length && char.IsWhiteSpace(i_Phrase[index]) == true)
+                {
                     index++;
+                }
             }
 
             return wordCount;

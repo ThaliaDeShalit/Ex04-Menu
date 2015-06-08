@@ -68,22 +68,23 @@ namespace Ex04.Menus.Test
 
         private int countWords(string i_Phrase)
         {
-            int numOfWords = 0;
+            String text = i_Phrase.Trim();
+            int wordCount = 0, index = 0;
 
-            foreach (char character in i_Phrase)
+            while (index < text.Length)
             {
-                if (character == ' ')
-                {
-                    numOfWords++;
-                }
+                // check if current char is part of a word
+                while (index < text.Length && Char.IsWhiteSpace(text[index]) == false)
+                    index++;
+
+                wordCount++;
+
+                // skip whitespace until next word
+                while (index < text.Length && Char.IsWhiteSpace(text[index]) == true)
+                    index++;
             }
 
-            if (i_Phrase.Length > 0)
-            {
-                numOfWords++;
-            }
-
-            return numOfWords;
+            return wordCount;
         }
     }
 }

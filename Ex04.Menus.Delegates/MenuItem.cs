@@ -46,7 +46,7 @@ namespace Ex04.Menus.Delegates
             return isSubMenu;
         }
 
-        public void onSelected()
+        public virtual void OnSelected()
         {
             if (Selected != null)
             {

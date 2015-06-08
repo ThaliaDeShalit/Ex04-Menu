@@ -22,6 +22,7 @@ namespace Ex04.Menus.Test
             //main.Show();
 
             TestMenuInterface test = new TestMenuInterface();
+            //TestMenuDelegate delegateTest = new TestMenuDelegate();
 
         }       
 

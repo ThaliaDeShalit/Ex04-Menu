@@ -7,13 +7,20 @@ namespace Ex04.Menus.Test
 {
     internal class TestMenuInterface
     {
+        private MainMenu m_Menu;
+
         public TestMenuInterface()
         {
-            createAndRunMainMenu();
+            createMainMenu();
+        }
+
+        public void Run()
+        {
+            m_Menu.Show();
         }
 
         // Create and show the main menu
-        private void createAndRunMainMenu()
+        private void createMainMenu()
         {
             MenuItem mainMenu = new MenuItem("Interface Main Menu");
 
@@ -23,9 +30,7 @@ namespace Ex04.Menus.Test
             mainMenu.SubItems.Add(showDateTimeMenu);
             mainMenu.SubItems.Add(infoMenu);
 
-            MainMenu menu = new MainMenu(mainMenu);
-
-            menu.Show();
+            m_Menu = new MainMenu(mainMenu);
         }
 
         // Creates the Show Time/Date sub menu tree
@@ -57,7 +62,7 @@ namespace Ex04.Menus.Test
         }
 
         // Each class underneath represents a different type of menu item
-        internal class ShowTime : MenuItem, IActionable
+        private class ShowTime : MenuItem, IActionable
         {
             public ShowTime()
                 : base("Show Time")
@@ -71,7 +76,7 @@ namespace Ex04.Menus.Test
             }
         }
 
-        internal class ShowDate : MenuItem, IActionable
+        private class ShowDate : MenuItem, IActionable
         {
             public ShowDate()
                 : base("Show Date")
@@ -85,7 +90,7 @@ namespace Ex04.Menus.Test
             }
         }
 
-        internal class ShowVersion : MenuItem, IActionable
+        private class ShowVersion : MenuItem, IActionable
         {
             public ShowVersion()
                 : base("Show Version")
@@ -99,7 +104,7 @@ namespace Ex04.Menus.Test
             }
         }
 
-        internal class CountWords : MenuItem, IActionable
+        private class CountWords : MenuItem, IActionable
         {
             public CountWords()
                 : base("Count Words")

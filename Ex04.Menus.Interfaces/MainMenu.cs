@@ -13,6 +13,7 @@ namespace Ex04.Menus.Interfaces
         private const string k_GoodbyeMessage = "Goodbye";
         private const string k_InvalidInputOutOfBounds = "Invalid input: input must be between 0 and {0}, please enter a valid input:"; // the max value is entered by the relevent method
         private const string k_InvalidInputNotADigit = "Invalid input: input must be a digit, please enter a valid input:";
+        private const int k_ExitOrBackNumRepresntation = 0;
 
         private MenuItem m_MainMenu;
 
@@ -23,55 +24,12 @@ namespace Ex04.Menus.Interfaces
 
         public void Show()
         {
+            showMenu(m_MainMenu, k_ExitOption);
             Console.Clear();
-            StringBuilder stringBuilder = new StringBuilder();
-            int inputFromUser;
-            int index = 1;
-
-            while (true)
-            {
-                stringBuilder.Append(string.Format(
-@"{0}
-{1}
-{2}
-", m_MainMenu.Header, k_HeaderSeperator, k_ExitOption));
-
-                foreach (MenuItem menuItem in m_MainMenu.SubItems)
-                {
-                    stringBuilder.Append(string.Format(
-@"{0}: {1} 
-", index, menuItem.Header));
-                    index++;
-                }
-
-                Console.WriteLine(stringBuilder.ToString());
-                inputFromUser = getInput(m_MainMenu.SubItems.Count);
-
-                if (inputFromUser == 0)
-                {
-                    Console.WriteLine(k_GoodbyeMessage);
-                    break;
-                }
-                else
-                {
-                    MenuItem subItem = m_MainMenu.SubItems[inputFromUser];
-
-                    if (subItem.IsSubMenu())
-                    {
-                        showSubMenu(subItem);
-                    }
-                    else
-                    {
-                        IClickable subItemToClickOn = (IClickable)subItem;
-
-                        subItemToClickOn.DoSomething();
-                    }
-                }
-
-            }
+            Console.WriteLine(k_GoodbyeMessage);
         }
 
-        private void showSubMenu(MenuItem i_Menu)
+        private void showMenu(MenuItem i_Menu, string i_BackOrExitOption)
         {
             Console.Clear();
             StringBuilder stringBuilder = new StringBuilder();
@@ -84,7 +42,7 @@ namespace Ex04.Menus.Interfaces
 @"{0}
 {1}
 {2}
-", i_Menu.Header, k_HeaderSeperator, k_BackOption));
+", i_Menu.Header, k_HeaderSeperator, i_BackOrExitOption));
 
                 foreach (MenuItem menuItem in i_Menu.SubItems)
                 {
@@ -97,7 +55,7 @@ namespace Ex04.Menus.Interfaces
                 Console.WriteLine(stringBuilder.ToString());
                 inputFromUser = getInput(i_Menu.SubItems.Count);
 
-                if (inputFromUser == 0)
+                if (inputFromUser == k_ExitOrBackNumRepresntation)
                 {
                     break;
                 }
@@ -107,7 +65,7 @@ namespace Ex04.Menus.Interfaces
 
                     if (subItem.IsSubMenu())
                     {
-                        showSubMenu(subItem);
+                        showMenu(subItem, k_BackOption);
                     }
                     else
                     {

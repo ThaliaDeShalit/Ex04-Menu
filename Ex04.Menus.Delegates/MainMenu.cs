@@ -87,6 +87,8 @@ namespace Ex04.Menus.Delegates
                     else
                     {
                         Console.Clear();
+
+                        // Calls the method that invokes the listeners of this menu item
                         subItem.OnSelected();
 
                         Console.WriteLine("{0}{1}", Environment.NewLine, k_PressToContinue);

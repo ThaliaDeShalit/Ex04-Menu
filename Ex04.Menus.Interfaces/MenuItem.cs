@@ -31,6 +31,7 @@ namespace Ex04.Menus.Interfaces
             }
         }
 
+        // Checks if the menu has sub items, and therefor a menu or not
         internal bool IsSubMenu()
         {
             bool isSubMenu = true;

@@ -71,7 +71,9 @@ namespace Ex04.Menus.Interfaces
                 inputFromUser = getInput(i_Menu.SubItems.Count);
                 
                 Console.Clear();
-                
+
+                // first checking the user chose the '0' option, and if so breaking the 
+                // loop and going one step back in the recursion
                 if (inputFromUser == k_ExitOrBackNumRepresntation)
                 {
                     break;
@@ -80,13 +82,16 @@ namespace Ex04.Menus.Interfaces
                 {
                     MenuItem subItem = i_Menu.SubItems[inputFromUser - 1];
 
+                    // Checking if the item selected is a sub menu or a method caller
                     if (subItem.IsSubMenu())
                     {
                         showMenu(subItem, k_BackOption);
                     }
                     else
                     {
+                        // Runs the method that was overrided by the user
                         (subItem as IActionable).DoSomething();
+
                         Console.WriteLine("{0}{1}", Environment.NewLine, k_PressToContinue);
                         Console.ReadKey();
                     }
@@ -94,6 +99,7 @@ namespace Ex04.Menus.Interfaces
             }
         }
 
+        // This method gets the input and makes sure it is valid
         private int getInput(int i_MaxIntValue)
         {
             int intInputFromUser;
@@ -104,8 +110,10 @@ namespace Ex04.Menus.Interfaces
             {
                 inputFromUser = Console.ReadLine();
 
+                // Tries to parse to int
                 if (int.TryParse(inputFromUser, out intInputFromUser))
                 {
+                    // Checks if the int entered is out of bounds
                     if (intInputFromUser > i_MaxIntValue)
                     {
                         Console.WriteLine(string.Format(k_InvalidInputOutOfBounds, i_MaxIntValue));

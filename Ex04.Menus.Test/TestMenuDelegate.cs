@@ -7,13 +7,20 @@ namespace Ex04.Menus.Test
 {
     internal class TestMenuDelegate
     {
+        private MainMenu m_Menu;
+
         public TestMenuDelegate()
         {
-            createAndRunMainMenu();
+            createMainMenu();
+        }
+
+        public void Run()
+        {
+            m_Menu.Show();
         }
 
         // Create and show the main menu
-        private void createAndRunMainMenu()
+        private void createMainMenu()
         {
             MenuItem mainMenu = new MenuItem("Delegate Main Menu");
 
@@ -23,9 +30,7 @@ namespace Ex04.Menus.Test
             mainMenu.SubItems.Add(showDateTimeMenu);
             mainMenu.SubItems.Add(infoMenu);
 
-            MainMenu menu = new MainMenu(mainMenu);
-
-            menu.Show();
+            m_Menu = new MainMenu(mainMenu);
         }
 
         // Creates the Show Time/Date sub menu tree

@@ -42,8 +42,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
     <Compile Include="InterfaceClickableMenuItems.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="TestMenuDelegate.cs" />
     <Compile Include="TestMenuInterface.cs" />
   </ItemGroup>
   <ItemGroup>

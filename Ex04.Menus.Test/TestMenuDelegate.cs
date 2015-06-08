@@ -5,13 +5,13 @@ using Ex04.Menus.Delegates;
 
 namespace Ex04.Menus.Test
 {
-    class DelegateTester
+    class TestMenuDelegate
     {
         public void run()
         {
             MenuItem file = new MenuItem("File");
             MenuItem newProject = new MenuItem("New Project");
-            newProject.clicked += new Action<MenuItem>(newProject_Selected);
+            newProject.Selected += new Action<MenuItem>(newProject_Selected);
             file.SubItems.Add(newProject);
 
 

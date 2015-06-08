@@ -63,6 +63,7 @@ namespace Ex04.Menus.Test
         }
 
 
+        // All the methods that are attached to each of the leaf menu items
         private void showTime_Selected(MenuItem i_MenuItem)
         {
             TesterUtils.showTime();

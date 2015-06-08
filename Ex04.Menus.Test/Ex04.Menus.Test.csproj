@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
+    <Compile Include="InterfaceClickableMenuItems.cs" />
+    <Compile Include="TestMenuInterface.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

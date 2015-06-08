@@ -113,7 +113,7 @@ namespace Ex04.Menus.Interfaces
                 if (int.TryParse(inputFromUser, out intInputFromUser))
                 {
                     // Checks if the int entered is out of bounds
-                    if (intInputFromUser > i_MaxIntValue)
+                    if (intInputFromUser > i_MaxIntValue || intInputFromUser < 0)
                     {
                         Console.WriteLine(string.Format(k_InvalidInputOutOfBounds, i_MaxIntValue));
                     }

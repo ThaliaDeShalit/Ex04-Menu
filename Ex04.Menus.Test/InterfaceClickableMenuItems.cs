@@ -29,7 +29,7 @@ namespace Ex04.Menus.Test
 
         public void DoSomething()
         {
-            Console.WriteLine("Current date: {0}", DateTime.Now.ToString("DD/MM/YYYY"));
+            Console.WriteLine("Current date: {0}", DateTime.Now.ToString("dd/MM/yy"));
         }
     }
 
@@ -76,6 +76,11 @@ namespace Ex04.Menus.Test
                 {
                     numOfWords++;
                 }
+            }
+
+            if (i_Phrase.Length > 0)
+            {
+                numOfWords++;
             }
 
             return numOfWords;

@@ -14,7 +14,7 @@ namespace Ex04.Menus.Test
 
         private void createAndRunMainMenu()
         {
-            MenuItem mainMenu = new MenuItem("Main Menu");
+            MenuItem mainMenu = new MenuItem("Interface Main Menu");
 
             MenuItem showDateTimeMenu = createShowDateTimeMenu();
             MenuItem infoMenu = createInfoMenu();

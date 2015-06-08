@@ -28,6 +28,7 @@ namespace Ex04.Menus.Delegates
             showMenu(m_MainMenu, k_ExitOption);
             Console.Clear();
             Console.WriteLine(k_GoodbyeMessage);
+            Console.ReadKey();
         }
 
         private void showMenu(MenuItem i_Menu, string i_BackOrExitOption)

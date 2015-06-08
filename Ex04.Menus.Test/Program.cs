@@ -10,7 +10,7 @@ namespace Ex04.Menus.Test
         public static void Main()
         {
             TestMenuInterface test = new TestMenuInterface();
-            //TestMenuDelegate delegateTest = new TestMenuDelegate();
+            TestMenuDelegate delegateTest = new TestMenuDelegate();
         }       
     }
 }

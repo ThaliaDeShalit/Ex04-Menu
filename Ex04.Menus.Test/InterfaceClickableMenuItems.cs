@@ -5,6 +5,8 @@ using Ex04.Menus.Interfaces;
 
 namespace Ex04.Menus.Test
 {
+    // ShowTime menu item - Extends MenuItem, implements IClickable as it
+    // performs an action
     class ShowTime : MenuItem, IActionable
     {
         public ShowTime()

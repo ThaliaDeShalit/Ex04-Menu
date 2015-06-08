@@ -5,8 +5,9 @@ using Ex04.Menus.Interfaces;
 
 namespace Ex04.Menus.Test
 {
-    // ShowTime menu item - Extends MenuItem, implements IClickable as it
-    // performs an action
+    // Each class represents a leaf on the menu. They each extend Interfaces.MenuItem
+    // and implement IActionable to perform their action.
+
     class ShowTime : MenuItem, IActionable
     {
         public ShowTime()

@@ -10,9 +10,10 @@ namespace Ex04.Menus.Delegates
         private const string k_ExitOption = "0: Exit";
         private const string k_BackOption = "0: Back";
         private const string k_ChooseRequest = "Please choose a number corresponding to one of the aformentioned options";
-        private const string k_GoodbyeMessage = "Goodbye";
+        private const string k_GoodbyeMessage = "Goodbye. Press any key to leave...";
         private const string k_InvalidInputOutOfBounds = "Invalid input: input must be between 0 and {0}, please enter a valid input:"; // the max value is entered by the relevent method
         private const string k_InvalidInputNotADigit = "Invalid input: input must be a digit, please enter a valid input:";
+        private const string k_PressToContinue = "Press any key to continue";
         private const int k_ExitOrBackNumRepresntation = 0;
 
         private MenuItem m_MainMenu;
@@ -31,13 +32,15 @@ namespace Ex04.Menus.Delegates
 
         private void showMenu(MenuItem i_Menu, string i_BackOrExitOption)
         {
-            Console.Clear();
             StringBuilder stringBuilder = new StringBuilder();
             int inputFromUser;
-            int index = 1;
+            int index;
 
             while (true)
             {
+                Console.Clear();
+                index = 1;
+                stringBuilder.Length = 0;
                 stringBuilder.Append(string.Format(
 @"{0}
 {1}
@@ -54,7 +57,7 @@ namespace Ex04.Menus.Delegates
 
                 Console.WriteLine(stringBuilder.ToString());
                 inputFromUser = getInput(i_Menu.SubItems.Count);
-
+                Console.Clear();
                 if (inputFromUser == k_ExitOrBackNumRepresntation)
                 {
                     break;
@@ -70,6 +73,9 @@ namespace Ex04.Menus.Delegates
                     else
                     {
                         subItem.onClicked();
+
+                        Console.WriteLine("{0}, {1}", Environment.NewLine, k_PressToContinue);
+                        Console.ReadKey();
                     }
                 }
             }

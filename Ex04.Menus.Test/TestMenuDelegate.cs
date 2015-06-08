@@ -60,52 +60,25 @@ namespace Ex04.Menus.Test
         }
 
 
-
         private void showTime_Selected(MenuItem i_MenuItem)
         {
-            Console.WriteLine("Current time: {0}", DateTime.Now.ToString("h:mm:ss tt"));
+            TesterUtils.showTime();
         }
 
         private void showDate_Selected(MenuItem i_MenuItem)
         {
-            Console.WriteLine("Current date: {0}", DateTime.Now.ToString("dd/MM/yy"));
+            TesterUtils.showDate();
         }
 
         private void showVersion_Selected(MenuItem i_MenuItem)
         {
-            Console.WriteLine("Version: 15.2.4.0");
+            TesterUtils.showVersion();
+
         }
 
         private void countWords_Selected(MenuItem i_MenuItem)
         {
-            int numOfWords;
-            string input;
-
-            Console.WriteLine("Please enter a phrase:");
-            input = Console.ReadLine();
-            numOfWords = countWords(input);
-            Console.WriteLine("There are {0} words in the phrase '{1}'", numOfWords.ToString(), input);
-        }
-
-        private int countWords(string i_Phrase)
-        {
-            String text = i_Phrase.Trim();
-            int wordCount = 0, index = 0;
-
-            while (index < text.Length)
-            {
-                // check if current char is part of a word
-                while (index < text.Length && Char.IsWhiteSpace(text[index]) == false)
-                    index++;
-
-                wordCount++;
-
-                // skip whitespace until next word
-                while (index < text.Length && Char.IsWhiteSpace(text[index]) == true)
-                    index++;
-            }
-
-            return wordCount;
+            TesterUtils.countWords();
         }
     }
 }

@@ -9,11 +9,7 @@ namespace Ex04.Menus.Test
     {
         public static void Main()
         {
-<<<<<<< HEAD
-            DelegateTester dt = new DelegateTester();
-            dt.run();
-=======
->>>>>>> origin/master
+
             //MenuItem file = new MenuItem("File");
             //NewProjectFunction newProject = new NewProjectFunction("New Project");
             //MenuItem add = new MenuItem("Add");
@@ -24,11 +20,9 @@ namespace Ex04.Menus.Test
 
             //MainMenu main = new MainMenu(file);
             //main.Show();
-<<<<<<< HEAD
-=======
 
             TestMenuInterface test = new TestMenuInterface();
->>>>>>> origin/master
+
         }       
 
         class NewProjectFunction : MenuItem, IClickable

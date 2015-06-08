@@ -12,6 +12,7 @@ namespace Ex04.Menus.Test
             createAndRunMainMenu();
         }
 
+        // Create and show the main menu
         private void createAndRunMainMenu()
         {
             MenuItem mainMenu = new MenuItem("Interface Main Menu");
@@ -27,6 +28,7 @@ namespace Ex04.Menus.Test
             menu.Show();
         }
 
+        // Creates the Show Time/Date sub menu tree
         private MenuItem createShowDateTimeMenu()
         {
             MenuItem showDateTimeMenu = new MenuItem("Show Date/Time");
@@ -40,6 +42,7 @@ namespace Ex04.Menus.Test
             return showDateTimeMenu;
         }
 
+        // Creates the Info sub menu tree
         private MenuItem createInfoMenu()
         {
             MenuItem infoMenu = new MenuItem("Info");

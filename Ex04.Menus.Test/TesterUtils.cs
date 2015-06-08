@@ -4,6 +4,8 @@ using System.Text;
 
 namespace Ex04.Menus.Test
 {
+    // A static class to hold all the menu options. We use it because both the interface
+    // and the delegate menu both call the same functions.
     internal static class TesterUtils
     {
         internal static void showTime()
@@ -35,17 +37,18 @@ namespace Ex04.Menus.Test
         private static int countWords(string i_Phrase)
         {
             String text = i_Phrase.Trim();
-            int wordCount = 0, index = 0;
+            int wordCount = 0;
+            int index = 0;
 
             while (index < text.Length)
             {
-                // check if current char is part of a word
+                // Check if current char is part of a word
                 while (index < text.Length && Char.IsWhiteSpace(text[index]) == false)
                     index++;
 
                 wordCount++;
 
-                // skip whitespace until next word
+                // Skip whitespace until next word
                 while (index < text.Length && Char.IsWhiteSpace(text[index]) == true)
                     index++;
             }

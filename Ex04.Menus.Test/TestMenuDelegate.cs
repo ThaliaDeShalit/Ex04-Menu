@@ -32,10 +32,10 @@ namespace Ex04.Menus.Test
             MenuItem showDateTimeMenu = new MenuItem("Show Date/Time");
 
             MenuItem showTime = new MenuItem("Show Time");
-            showTime.Selected += new Action<MenuItem>(showTime_Selected);
+            showTime.Selected += (showTime_Selected);
 
             MenuItem showDate = new MenuItem("Show Date");
-            showDate.Selected += new Action<MenuItem>(showDate_Selected);
+            showDate.Selected += (showDate_Selected);
 
             showDateTimeMenu.SubItems.Add(showTime);
             showDateTimeMenu.SubItems.Add(showDate);
@@ -48,10 +48,10 @@ namespace Ex04.Menus.Test
             MenuItem infoMenu = new MenuItem("Info");
 
             MenuItem showVersion = new MenuItem("Show Version");
-            showVersion.Selected += new Action<MenuItem>(showVersion_Selected);
+            showVersion.Selected += (showVersion_Selected);
 
             MenuItem countWords = new MenuItem("Count Words");
-            countWords.Selected += new Action<MenuItem>(countWords_Selected);
+            countWords.Selected += (countWords_Selected);
 
             infoMenu.SubItems.Add(showVersion);
             infoMenu.SubItems.Add(countWords);

@@ -18,6 +18,13 @@ namespace Ex04.Menus.Test
 
             MenuItem showDateTimeMenu = createShowDateTimeMenu();
             MenuItem infoMenu = createInfoMenu();
+
+            mainMenu.SubItems.Add(showDateTimeMenu);
+            mainMenu.SubItems.Add(infoMenu);
+
+            MainMenu menu = new MainMenu(mainMenu);
+
+            menu.Show();
         }
 
         private MenuItem createShowDateTimeMenu()

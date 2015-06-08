@@ -67,7 +67,7 @@ namespace Ex04.Menus.Interfaces
                 }
                 else
                 {
-                    MenuItem subItem = m_MainMenu.SubItems[inputFromUser - 1];
+                    MenuItem subItem = i_Menu.SubItems[inputFromUser - 1];
 
                     if (subItem.IsSubMenu())
                     {
@@ -77,7 +77,7 @@ namespace Ex04.Menus.Interfaces
                     {
                         (subItem as IClickable).DoSomething();
 
-                        Console.WriteLine("{0}, {1}", Environment.NewLine, k_PressToContinue);
+                        Console.WriteLine("{0}{1}", Environment.NewLine, k_PressToContinue);
                         Console.ReadKey();
                     }
                 }

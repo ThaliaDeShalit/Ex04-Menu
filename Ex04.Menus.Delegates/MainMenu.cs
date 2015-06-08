@@ -74,7 +74,7 @@ namespace Ex04.Menus.Delegates
                     {
                         subItem.onSelected();
 
-                        Console.WriteLine("{0}, {1}", Environment.NewLine, k_PressToContinue);
+                        Console.WriteLine("{0}{1}", Environment.NewLine, k_PressToContinue);
                         Console.ReadKey();
                     }
                 }

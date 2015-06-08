@@ -9,10 +9,10 @@ namespace Ex04.Menus.Test
     {
         public TestMenuInterface()
         {
-            createMainMenu();
+            createAndRunMainMenu();
         }
 
-        private void createMainMenu()
+        private void createAndRunMainMenu()
         {
             MenuItem mainMenu = new MenuItem("Main Menu");
 

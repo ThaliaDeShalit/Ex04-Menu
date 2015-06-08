@@ -13,6 +13,7 @@ namespace Ex04.Menus.Interfaces
         private const string k_GoodbyeMessage = "Goodbye. Press any key to leave...";
         private const string k_InvalidInputOutOfBounds = "Invalid input: input must be between 0 and {0}, please enter a valid input:"; // the max value is entered by the relevent method
         private const string k_InvalidInputNotADigit = "Invalid input: input must be a digit, please enter a valid input:";
+        private const string k_PressToContinue = "Press any key to continue";
         private const int k_ExitOrBackNumRepresntation = 0;
 
         private MenuItem m_MainMenu;

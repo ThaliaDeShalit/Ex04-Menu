@@ -65,22 +65,22 @@ namespace Ex04.Menus.Test
         // All the methods that are attached to each of the leaf menu items
         private void showTime_Selected(MenuItem i_MenuItem)
         {
-            TesterUtils.showTime();
+            TesterUtils.ShowTime();
         }
 
         private void showDate_Selected(MenuItem i_MenuItem)
         {
-            TesterUtils.showDate();
+            TesterUtils.ShowDate();
         }
 
         private void showVersion_Selected(MenuItem i_MenuItem)
         {
-            TesterUtils.showVersion();
+            TesterUtils.ShowVersion();
         }
 
         private void countWords_Selected(MenuItem i_MenuItem)
         {
-            TesterUtils.countWords();
+            TesterUtils.CountWords();
         }
     }
 }

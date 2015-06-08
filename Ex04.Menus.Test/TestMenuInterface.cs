@@ -67,7 +67,7 @@ namespace Ex04.Menus.Test
 
             public void DoSomething()
             {
-                TesterUtils.showTime();
+                TesterUtils.ShowTime();
             }
         }
 
@@ -81,7 +81,7 @@ namespace Ex04.Menus.Test
 
             public void DoSomething()
             {
-                TesterUtils.showDate();
+                TesterUtils.ShowDate();
             }
         }
 
@@ -95,7 +95,7 @@ namespace Ex04.Menus.Test
 
             public void DoSomething()
             {
-                TesterUtils.showVersion();
+                TesterUtils.ShowVersion();
             }
         }
 
@@ -109,7 +109,7 @@ namespace Ex04.Menus.Test
 
             public void DoSomething()
             {
-                TesterUtils.countWords();
+                TesterUtils.CountWords();
             }
         }
     }

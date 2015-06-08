@@ -8,22 +8,22 @@ namespace Ex04.Menus.Test
     // and the delegate menu both call the same functions.
     internal static class TesterUtils
     {
-        internal static void showTime()
+        internal static void ShowTime()
         {
             Console.WriteLine("Current time: {0}", DateTime.Now.ToString("h:mm:ss tt"));
         }
 
-        internal static void showDate()
+        internal static void ShowDate()
         {
             Console.WriteLine("Current date: {0}", DateTime.Now.ToString("dd/MM/yy"));
         }
 
-        internal static void showVersion()
+        internal static void ShowVersion()
         {
             Console.WriteLine("Version: 15.2.4.0");
         }
 
-        internal static void countWords()
+        internal static void CountWords()
         {
             int numOfWords;
             string input;

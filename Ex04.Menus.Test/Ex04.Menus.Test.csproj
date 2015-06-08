@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="InterfaceClickableMenuItems.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="TesterUtils.cs" />
     <Compile Include="TestMenuDelegate.cs" />
     <Compile Include="TestMenuInterface.cs" />
   </ItemGroup>

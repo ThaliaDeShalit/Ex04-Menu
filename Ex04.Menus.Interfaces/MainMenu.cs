@@ -75,12 +75,8 @@ namespace Ex04.Menus.Interfaces
                     else
                     {
                         (subItem as IClickable).DoSomething();
-<<<<<<< HEAD
-=======
-
                         Console.WriteLine("{0}{1}", Environment.NewLine, k_PressToContinue);
                         Console.ReadKey();
->>>>>>> origin/master
                     }
                 }
             }

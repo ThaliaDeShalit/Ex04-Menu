@@ -23,6 +23,7 @@ namespace Ex04.Menus.Delegates
             m_MainMenu = i_MainMenu;
         }
 
+        // The method that calls a recursive method that generates the menus
         public void Show()
         {
             showMenu(m_MainMenu, k_ExitOption);
@@ -31,6 +32,9 @@ namespace Ex04.Menus.Delegates
             Console.ReadKey();
         }
 
+        // A recursive method that generates the menus (first the main, then the subs).
+        // The method recives the relevent '0' option string to make sure no irrelevant
+        // if's are called
         private void showMenu(MenuItem i_Menu, string i_BackOrExitOption)
         {
             StringBuilder stringBuilder = new StringBuilder();
@@ -39,15 +43,19 @@ namespace Ex04.Menus.Delegates
 
             while (true)
             {
+                // Reseting the screen, index and stringBuilder
                 Console.Clear();
                 index = 1;
                 stringBuilder.Length = 0;
+
+                // Appending the header and the '0' option
                 stringBuilder.Append(string.Format(
 @"{0}
 {1}
 {2}
 ", i_Menu.Header, k_HeaderSeperator, i_BackOrExitOption));
 
+                // Appending the headers of all the menu items in the current menu
                 foreach (MenuItem menuItem in i_Menu.SubItems)
                 {
                     stringBuilder.Append(string.Format(
@@ -57,8 +65,12 @@ namespace Ex04.Menus.Delegates
                 }
 
                 Console.WriteLine(stringBuilder.ToString());
+
+                // Getting the input from the user
                 inputFromUser = getInput(i_Menu.SubItems.Count);
-                Console.Clear();
+
+                // first checking the user chose the '0' option, and if so breaking the 
+                // loop and going one step back in the recursion
                 if (inputFromUser == k_ExitOrBackNumRepresntation)
                 {
                     break;
@@ -67,12 +79,14 @@ namespace Ex04.Menus.Delegates
                 {
                     MenuItem subItem = i_Menu.SubItems[inputFromUser - 1];
 
+                    // Checking if the item selected is a sub menu or a method caller
                     if (subItem.IsSubMenu())
                     {
                         showMenu(subItem, k_BackOption);
                     }
                     else
                     {
+                        Console.Clear();
                         subItem.OnSelected();
 
                         Console.WriteLine("{0}{1}", Environment.NewLine, k_PressToContinue);
@@ -82,6 +96,7 @@ namespace Ex04.Menus.Delegates
             }
         }
 
+        // This method gets the input and makes sure it is valid
         private int getInput(int i_MaxIntValue)
         {
             int intInputFromUser;
@@ -92,8 +107,10 @@ namespace Ex04.Menus.Delegates
             {
                 inputFromUser = Console.ReadLine();
 
+                // Tries to parse to int
                 if (int.TryParse(inputFromUser, out intInputFromUser))
                 {
+                    // Checks if the int entered is out of bounds
                     if (intInputFromUser > i_MaxIntValue)
                     {
                         Console.WriteLine(string.Format(k_InvalidInputOutOfBounds, i_MaxIntValue));

@@ -23,15 +23,18 @@ namespace Ex04.Menus.Interfaces
             m_MainMenu = i_MainMenu;
         }
 
+        // The method that calls a recursive method that generates the menus
         public void Show()
         {
             showMenu(m_MainMenu, k_ExitOption);
             Console.Clear();
             Console.WriteLine(k_GoodbyeMessage);
-            //Console.ReadLine();
             Console.ReadKey();
         }
 
+        // A recursive method that generates the menus (first the main, then the subs).
+        // The method recives the relevent '0' option string to make sure no irrelevant
+        // if's are called
         private void showMenu(MenuItem i_Menu, string i_BackOrExitOption)
         {
 
@@ -41,15 +44,19 @@ namespace Ex04.Menus.Interfaces
 
             while (true)
             {
+                // Reseting the screen, index and stringBuilder
                 Console.Clear();
                 index = 1;
                 stringBuilder.Length = 0;
+
+                // Appending the header and the '0' option
                 stringBuilder.Append(string.Format(
 @"{0}
 {1}
 {2}
 ", i_Menu.Header, k_HeaderSeperator, i_BackOrExitOption));
 
+                // Appending the headers of all the menu items in the current menu
                 foreach (MenuItem menuItem in i_Menu.SubItems)
                 {
                     stringBuilder.Append(string.Format(
@@ -59,8 +66,12 @@ namespace Ex04.Menus.Interfaces
                 }
 
                 Console.WriteLine(stringBuilder.ToString());
+
+                // Getting the input from the user
                 inputFromUser = getInput(i_Menu.SubItems.Count);
+                
                 Console.Clear();
+                
                 if (inputFromUser == k_ExitOrBackNumRepresntation)
                 {
                     break;
@@ -75,7 +86,7 @@ namespace Ex04.Menus.Interfaces
                     }
                     else
                     {
-                        (subItem as IClickable).DoSomething();
+                        (subItem as IActionable).DoSomething();
                         Console.WriteLine("{0}{1}", Environment.NewLine, k_PressToContinue);
                         Console.ReadKey();
                     }

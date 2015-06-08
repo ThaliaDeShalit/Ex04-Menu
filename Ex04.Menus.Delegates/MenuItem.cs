@@ -4,7 +4,6 @@ using System.Text;
 
 namespace Ex04.Menus.Delegates
 {
-
     public class MenuItem
     {
         public event Action<MenuItem> Selected;
@@ -34,6 +33,7 @@ namespace Ex04.Menus.Delegates
             }
         }
 
+        // Checks if the menu has sub items, and therefor a menu or not
         internal bool IsSubMenu()
         {
             bool isSubMenu = true;
@@ -46,7 +46,8 @@ namespace Ex04.Menus.Delegates
             return isSubMenu;
         }
 
-        public virtual void OnSelected()
+        // The method that informs that this menuItem was selected
+        public void OnSelected()
         {
             if (Selected != null)
             {

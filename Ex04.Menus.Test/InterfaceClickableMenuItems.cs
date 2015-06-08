@@ -5,7 +5,7 @@ using Ex04.Menus.Interfaces;
 
 namespace Ex04.Menus.Test
 {
-    class ShowTime : MenuItem, IClickable
+    class ShowTime : MenuItem, IActionable
     {
         public ShowTime()
             : base("Show Time")
@@ -19,7 +19,7 @@ namespace Ex04.Menus.Test
         }
     }
 
-    class ShowDate : MenuItem, IClickable
+    class ShowDate : MenuItem, IActionable
     {
         public ShowDate()
             : base("Show Date")
@@ -33,7 +33,7 @@ namespace Ex04.Menus.Test
         }
     }
 
-    class ShowVersion : MenuItem, IClickable
+    class ShowVersion : MenuItem, IActionable
     {
         public ShowVersion()
             : base("Show Version")
@@ -47,7 +47,7 @@ namespace Ex04.Menus.Test
         }
     }
 
-    class CountWords : MenuItem, IClickable
+    class CountWords : MenuItem, IActionable
     {
         public CountWords()
             : base("Count Words")
